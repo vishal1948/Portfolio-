@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vishal — Freelancer & Full-Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- ambient noise / grid backdrop -->
+<div class="grid-backdrop" aria-hidden="true"></div>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__brand">vishal<span class="accent">.</span>dev</a>
+  <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav__links" id="navLinks">
+    <li><a href="#log" data-nav>log</a></li>
+    <li><a href="#build" data-nav>projects</a></li>
+    <li><a href="#freelance" data-nav>freelance</a></li>
+    <li><a href="#stack" data-nav>stack</a></li>
+    <li><a href="#contact" data-nav class="nav__cta">contact</a></li>
+  </ul>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="hero__inner">
+    <p class="hero__eyebrow">
+      <span class="dot" aria-hidden="true"></span>
+      kolhapur, maharashtra &mdash; open to work
+    </p>
+    <h1 class="hero__title">
+      <span class="hero__line" id="typedLine">Building things that help you to GROW.
+    </h1>
+    <p class="hero__sub">
+      I'm Vishal Salukhe — a full-stack developer working across Node.js, Express, PostgreSQL and the browser.
+      BCA graduate, currently deep in a full-stack course while shipping real client sites and side projects.
+    </p>
+    <div class="hero__actions">
+      <a href="#build" class="btn btn--primary">see the work</a>
+      <a href="/assets/Vishal_Resume.pdf" class="btn btn--ghost" download>download résumé</a>
+    </div>
+  </div>
+
+  <div class="hero__terminal" aria-hidden="true">
+    <div class="terminal">
+      <div class="terminal__bar">
+        <span></span><span></span><span></span>
+        <p>bash</p>
+      </div>
+      <div class="terminal__body" id="terminalBody">
+        <p><span class="prompt">$</span> whoami</p>
+        <p class="typed-out">Vishal Salunkhe — Freelancer & full-stack dev, Kolhapur.</p>
+        <p><span class="prompt">$</span> git log --oneline -3</p>
+        <p class="typed-out">a91f2c9 deploy 3-2-1 challenge to render + neon</p>
+        <p class="typed-out">7c3d0e1 add potter's wheel animation — aman studio</p>
+        <p class="typed-out">4b19a02 ship ca portfolio via github pages</p>
+        <p><span class="prompt">$</span> <span class="cursor">&nbsp;</span></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== BUILD LOG (signature timeline) ===== -->
+<section class="section" id="log">
+  <div class="section__head">
+    <p class="eyebrow">01 &mdash; how i got here</p>
+    <h2>the build log</h2>
+    <p class="section__desc">Every dev has a resume. I keep a commit history — because that's actually how the work happened.</p>
+  </div>
+
+  <div class="commitlog">
+    <div class="commitlog__line" aria-hidden="true"></div>
+
+    <div class="commit">
+      <div class="commit__node">HEAD</div>
+      <div class="commit__card">
+        <p class="commit__hash">a91f2c9</p>
+        <h3>Shipped 3-2-1 Challenge live</h3>
+        <p>Deployed my capstone habit-tracker — Express + EJS + jQuery on the front, Postgres on the back — to production using Render and Neon.</p>
+        <span class="commit__tag">now</span>
+      </div>
+    </div>
+
+    <div class="commit">
+      <div class="commit__node"></div>
+      <div class="commit__card">
+        <p class="commit__hash">7c3d0e1</p>
+        <h3>Freelance: client sites in production</h3>
+        <p>Built and deployed two client projects end-to-end — a pottery studio site with a hand-animated potter's wheel, and a CA's professional portfolio on a custom domain.</p>
+        <span class="commit__tag">2026</span>
+      </div>
+    </div>
+
+    <div class="commit">
+      <div class="commit__node"></div>
+      <div class="commit__card">
+        <p class="commit__hash">4b19a02</p>
+        <h3>Backend, for real this time</h3>
+        <p>Moved past tutorials into REST principles, JWT auth, middleware, and PostgreSQL — building APIs I could actually explain in an interview.</p>
+        <span class="commit__tag">2026</span>
+      </div>
+    </div>
+
+    <div class="commit">
+      <div class="commit__node"></div>
+      <div class="commit__card">
+        <p class="commit__hash">e02a771</p>
+        <h3>BCA graduate, DRK College of Commerce</h3>
+        <p>Finished my degree and started treating side projects like production software — version control, staging, deploys, all of it.</p>
+        <span class="commit__tag">2026</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section class="section section--alt" id="build">
+  <div class="section__head">
+    <p class="eyebrow">02 &mdash; things i built</p>
+    <h2>projects</h2>
+    <p class="section__desc">Course exercises that turned into real, working software.</p>
+  </div>
+
+  <div class="projects" id="projectGrid">
+    <!-- populated by jQuery from PROJECTS data, see script.js -->
+  </div>
+</section>
+
+<!-- ===== FREELANCE ===== -->
+<section class="section" id="freelance">
+  <div class="section__head">
+    <p class="eyebrow">03 &mdash; client work</p>
+    <h2>freelance</h2>
+    <p class="section__desc">Sites built for real clients, from brief to deployed domain.</p>
+  </div>
+
+  <div class="freelance">
+    <article class="freelance__card">
+      <!-- <div class="freelance__media" data-tilt>
+        <div class="wheel" aria-hidden="true">
+          <div class="wheel__pot"></div>
+        </div>
+      </div> -->
+      <div class="browser-container">
+      <!-- Fake Browser Top Bar -->
+          <div class="browser-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <div class="browser-search">https://vishal1948.github.io/AmansStudio/</div>
+          </div>
+        <!-- The Live Preview Area -->
+        <iframe src="https://vishal1948.github.io/AmansStudio/" title="Project Preview" loading="lazy"></iframe>
+      </div>
+
+      <div class="freelance__body">
+        <p class="freelance__client">Aman Studio &mdash; terracotta pottery</p>
+        <h3>A storefront that feels handmade</h3>
+        <p>Full rebuild in HTML/CSS/jQuery with a custom animated potter's wheel, a WhatsApp-based ordering flow, and a persistent cart bar — no backend required, just careful front-end craft.</p>
+        <ul class="tags">
+          <li>HTML</li><li>CSS</li><li>jQuery</li><li>WhatsApp API</li><li><a href="https://vishal1948.github.io/AmansStudio/" target="_blank" style="background-color: #E4B363; color: #14180F; padding: 5px 15px;">visit</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="freelance__card freelance__card--reverse">
+      <div class="browser-container">
+      <!-- Fake Browser Top Bar -->
+          <div class="browser-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <div class="browser-search">https://vishal1948.github.io/SwapnilRaut/</div>
+          </div>
+        <!-- The Live Preview Area -->
+        <iframe src="https://vishal1948.github.io/SwapnilRaut/" title="Project Preview" loading="lazy" ></iframe>
+      </div>
+      <div class="freelance__body">
+        <p class="freelance__client">Swapnil Raut, CA &mdash; professional portfolio</p>
+        <h3>Credibility, deployed on a custom domain</h3>
+        <p>Separated a single-file draft into clean HTML/CSS/JS, added a profile photo, resume downloads and clickable contact rows, then shipped it on GitHub Pages with custom DNS configuration.</p>
+        <ul class="tags">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Pages</li><li><a href="https://vishal1948.github.io/SwapnilRaut/" target="_blank" style="background-color: #E4B363; color: #14180F; padding: 5px 15px;">visit</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== STACK ===== -->
+<section class="section section--alt" id="stack">
+  <div class="section__head">
+    <p class="eyebrow">04 &mdash; toolbox</p>
+    <h2>stack &amp; skills</h2>
+  </div>
+
+  <div class="stackgrid">
+    <div class="stackgroup">
+      <h4>Frontend</h4>
+      <ul><li>HTML5 / CSS3</li><li>JavaScript (ES6+)</li><li>jQuery</li><li>Responsive design</li></ul>
+    </div>
+    <div class="stackgroup">
+      <h4>Backend</h4>
+      <ul><li>Node.js</li><li>Express</li><li>REST APIs / JWT</li><li>ES Modules</li></ul>
+    </div>
+    <div class="stackgroup">
+      <h4>Data</h4>
+      <ul><li>PostgreSQL</li><li>pgAdmin</li><li>Neon (serverless Postgres)</li></ul>
+    </div>
+    <div class="stackgroup">
+      <h4>Tools &amp; Ops</h4>
+      <ul><li>Git / GitHub</li><li>Render</li><li>GitHub Pages</li><li>PowerShell</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section contact" id="contact">
+  <div class="section__head">
+    <p class="eyebrow">05 &mdash; let's talk</p>
+    <h2>open to full-stack roles &amp; freelance work</h2>
+    <p class="section__desc">Based in Kolhapur, happy to work remote. Fastest way to reach me is email.</p>
+  </div>
+
+  <form class="contact__form" id="contactForm" action="https://formspree.io/f/xaqrojvz" method="POST">
+    <div class="field">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn--primary">send message</button>
+    <p class="contact__status" id="contactStatus" role="status"></p>
+  </form>
+ 
+  <div class="social-container">
+        <!-- Gmail Link (using envelope icon) -->
+        <a href="mailto:salunkhevish1948@gmail.com" class="social-icon gmail" title="Email Me">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <!-- GitHub Link -->
+        <a href="https://github.com/vishal1948" target="_blank" class="social-icon github" title="GitHub Profile">
+            <i class="fa-brands fa-github"></i>
+        </a>
+
+        <!-- LinkedIn Link -->
+        <a href="https://www.linkedin.com/in/vishal-salunkhe-6aa006210/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BS9roXnDfThKMFryb0PA30Q%3D%3D" target="_blank" class="social-icon linkedin" title="LinkedIn Profile">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>&copy; <span id="year"></span> Vishal Salunkhe. All rights reserved.</p>
+  <button id="toTop" class="footer__top" aria-label="Back to top">↑ top</button>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@ $(function () {
     {
       title: "3-2-1 Challenge",
       desc: "A daily/weekly/monthly goal tracker with a history table, built as my capstone. Deployed live with Render + Neon Postgres.",
-      tags: ["Express", "EJS", "jQuery", "PostgreSQL", "Render"],
+      tags: ["Express", "EJS", "jQuery", "PostgreSQL", "Render", "Neon"],
       status: "live",
       link: "https://three-2-1-challenge.onrender.com/"
     },
@@ -15,14 +15,14 @@ $(function () {
       tags: ["JavaScript", "jQuery", "CSS"],
       status: "live",
       link: "https://vishal1948.github.io/Simon-Game/"
-    },
-    {
-      title: "Task API",
-      desc: "A REST API for managing tasks — routing, middleware, and JWT-based auth, built to actually understand the Express request pipeline, not just copy it.",
-      tags: ["Node.js", "Express", "JWT", "REST"],
-      status: "live",
-      link: "https://three-2-1-challenge.onrender.com/"
     }
+    // {
+    //   title: "Task API",
+    //   desc: "A REST API for managing tasks — routing, middleware, and JWT-based auth, built to actually understand the Express request pipeline, not just copy it.",
+    //   tags: ["Node.js", "Express", "JWT", "REST"],
+    //   status: "live",
+    //   link: "https://three-2-1-challenge.onrender.com/"
+    // }
     // {
     //   title: "Country Capital Quiz",
     //   desc: "A quiz app backed by PostgreSQL, working around a real pre-existing schema quirk instead of a clean textbook database.",
@@ -55,11 +55,40 @@ $(function () {
   });
 
   /* ---------- MOBILE NAV ---------- */
-  $("#navToggle").on("click", function () {
-    $("#navLinks").toggleClass("is-open");
+  const nav = document.getElementById("nav");
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+  const navAnchors = navLinks.querySelectorAll("a");
+
+  function closeMenu() {
+    nav.classList.remove("nav--open");
+    navToggle.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+  }
+
+  function openMenu() {
+    nav.classList.add("nav--open");
+    navToggle.classList.add("is-open");
+    navToggle.setAttribute("aria-expanded", "true");
+  }
+
+  navToggle.addEventListener("click", () => {
+    const isOpen = nav.classList.contains("nav--open");
+    isOpen ? closeMenu() : openMenu();
   });
-  $("#navLinks a").on("click", function () {
-    $("#navLinks").removeClass("is-open");
+
+  navAnchors.forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) closeMenu();
+  });
+
+  document.addEventListener("click", (e) => {
+    if (window.innerWidth <= 768 && !nav.contains(e.target)) {
+      closeMenu();
+    }
   });
 
   /* ---------- ACTIVE NAV ON SCROLL ---------- */
@@ -171,9 +200,12 @@ $("#contactForm").on("submit", function (e) {
   }).on("mouseleave", function () {
     $(this).css("transform", "perspective(600px) rotateY(0) rotateX(0)");
   });
+  
+  // ---- Update copyright year automatically ----
+  $('#year').text(new Date().getFullYear());
 
 });
 
-  // ---- Update copyright year automatically ----
-  $('#year').text(new Date().getFullYear());
+
+
 

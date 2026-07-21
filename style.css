@@ -98,9 +98,15 @@ img {
   align-items: center;
   justify-content: space-between;
   padding: 18px clamp(20px, 5vw, 64px);
+  border-bottom: 1px solid var(--border);
+}
+.nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background: rgba(13, 18, 16, 0.75);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  z-index: -1;
 }
 .nav__brand {
   font-family: var(--mono);
@@ -840,7 +846,7 @@ iframe {
     transition: transform 0.25s ease;
     border-left: 1px solid var(--border);
   }
-  .nav__links.is-open {
+   .nav--open .nav__links {
     transform: translateX(0);
   }
   .nav__toggle {
